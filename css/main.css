@@ -1,0 +1,577 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Nanum+Myeongjo&display=swap');
+
+/*reset*/
+*{margin: 0; padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;}
+a {color: inherit; text-decoration: none;}
+li {list-style: none;}
+address, em , i {font-style: none;}
+h1,h2,h3,h4,h5,h6 {font-size: inherit;}
+a:hover {text-decoration: none; color: inherit;}
+
+/* layout */
+body{
+  font-family: 'Nanum Myeongjo', sans-serif;
+  font-size: 14px; color: #333;
+}
+.wrap{
+  width: 100%;
+  overflow: hidden;
+}
+
+/* header */
+header{
+  width: 100%;
+  position: fixed; left: 0; top: 0;
+  padding: 40px 0 25px; box-sizing: border-box;
+  z-index: 100;
+  font-family: 'Montserrat', sans-serif; font-weight: bold;
+  text-align: center; text-transform: uppercase;
+  transition: all 0.4s;
+  background: #213135; color: #fff;
+}
+header .inner{
+  width: 90%; margin: 0 auto;
+}
+header .inner .logo{
+  display: inline-block; font-size: 25px; letter-spacing: 1px;
+  transition: all 0.4s;
+}
+header .inner .gnbBtn{
+  width: 32px; height: 12px; position: relative;
+  float: left; display: block; margin-top: 15px; 
+  transition: all 0.4s;
+  z-index: 200;
+}
+header .inner .gnbBtn span{
+  width: 100%; height: 3px; display: block;
+  position: absolute; left: 0;
+  background: #fff;
+}
+header .inner .gnbBtn span.a{
+  top: 0;
+}
+header .inner .gnbBtn span.b{
+  bottom: 0;
+}
+header .inner .contact{
+  display: block; float: right; margin-top: 10px;
+  transition: all 0.4s;
+}
+/* header.on motion*/
+header.on{
+  padding: 20px 0 18px; 
+  transition: all 0.4s;
+}
+header.on .logo{
+  font-size: 22px;
+  transition: all 0.4s;
+}
+header.on .gnbBtn, header.on .contact{
+  margin-top: 4px;
+}
+
+/* gnb */
+nav.gnb{
+  width: 0px; height: 100vh;
+  position: absolute; left: -1000px; top: 0;
+  padding: 95px 50px; box-sizing: border-box; text-align: left;
+  transition: all 0.7s; overflow: hidden;
+  background: #000;
+}
+nav.gnb ul{
+  width: 60%;
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
+  padding: 20px 0;
+}
+nav.gnb ul li a{
+  text-align: left; line-height: 50px;
+  font-size: 22px;
+}
+nav.gnb ul li a span{
+  text-transform: none;
+  font-family: 'Nanum Myeongjo', sans-serif;
+  font-style: italic; font-size: 20px;
+}
+/* header.on붙을때 gnb디자인 */
+header.on nav.gnb{
+  width: 300px; 
+  transition: all 0.4s;
+}
+header.on nav.gnb ul{
+  width: 50%;
+}
+nav.gnb.on{
+  width: 400px;
+  left: 0;
+}
+
+
+
+/* contents */
+.contents{
+  position: relative;
+  background: #fff;
+  z-index: 1; margin-bottom: 200px;
+}
+.contents .visual{
+  width: 100vw; height: 100vh;
+  position: relative;
+}
+.contents .visual .waves{
+  width: 100vw; height: 100vh;
+  object-fit: cover;
+  position: absolute; left: 0; top: 0;
+}
+/* object-fit : img나 video등의 콘텐츠 크기 맟추는방식 : cover는 가로 세로비를 유지하면서 요소 콘텐츠박스를 가득채움, 가로 세로비가 맞지 않을 경우 객체 일부가 잘려나감 */
+.contents .visual .title{
+  width: 100%;
+  position: absolute; left: 0; top: 50%;
+  transform: translateY(-50%); text-align: center;
+  color: #fff; font-size: 70px; text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase; font-family: 'Montserrat', sans-serif;
+}
+
+/* 공통 .inner */
+.inner{
+  width: 1400px; margin: 0 auto;
+}
+
+/* 공통 .text */
+.text .title{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px; letter-spacing: 1px;
+}
+.text p{
+  font-size: 35px; line-height: 1.2;
+  margin: 40px 0;
+}
+.text a{
+  display: inline-block; padding: 5px 15px;
+  border: 1px solid #333; border-radius: 20px; font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold; letter-spacing: 1px; text-transform: uppercase;
+  transition: all 0.2s;
+}
+.text a:hover, .text a:focus{
+  padding: 5px 18px; transition: all 0.2s;
+  border: 1px solid transparent; border-bottom: 1px solid #333; border-radius: 0;
+  background: #f2f0eb;
+}
+
+/* section.about */
+section.about{
+  background: #f2f0eb;
+  padding: 100px 0;
+}
+section.about .inner{
+  font-size: 45px;
+}
+
+/* section.approach */
+section.approach{
+  padding: 100px 0;
+}
+section.approach .inner{
+  position: relative;
+}
+section.approach .inner .list{
+  width: 48%;
+}
+section.approach .inner .list li{
+  margin-bottom: 30px;
+}
+section.approach .inner .list li:last-child{
+  margin-bottom: 0;
+}
+section.approach .inner .list li a{
+  width: 100%; height: 100%; 
+  position: relative;
+  border-radius: 10px; overflow: hidden;
+  display: block;
+}
+section.approach .inner .list li a img{
+  width: 100%;
+}
+section.approach .inner .list li a span{
+  display: none;
+}
+section.approach .inner .fix{
+  width: 45%; height: 100%;
+  position: absolute; right: 0; top: 0;
+}
+section.approach .inner .fix .text{
+  position: absolute; bottom: 10%;
+}
+section.approach .inner .fix .text.on{
+  position: fixed; top: 50%; transform: translateY(-50%);
+}
+section.approach .inner .list li a.on::after, section.approach .inner .list li a:hover::after{
+  content: "";
+  width: 100%; height: 100%; 
+  position: absolute; left: 0; top: 0;
+  background: rgba(41, 41, 41, 0.3);
+}
+section.approach .inner .list li a.on span, section.approach .inner .list li a:hover span{
+  width: 100%;
+  position: absolute; left: 0; top: 50%;
+  transform: translateY(-50%); text-align: center; 
+  color: #fff; font-size: 35px; font-style: italic;
+  display: block; 
+  z-index: 1;
+}
+section.approach .inner .list li a.on span b, section.approach .inner .list li a:hover span b{
+  font-family: 'Montserrat', sans-serif; font-style: normal;
+}
+
+/* section.sectors */
+section.sectors{
+  background: #f2f0eb; padding: 100px 0 230px;
+  position: relative; margin-bottom: 260px;
+}
+section.sectors .list{
+  width: 1400px; 
+  position: absolute; left: 50%; transform: translateX(-50%); bottom: -160px;
+  display: flex; justify-content: space-between;
+}
+section.sectors .list li{
+  width: 31%;
+  border-radius: 10px; overflow: hidden;
+}
+section.sectors .list li a{
+  display: block; position: relative;
+}
+section.sectors .list li a img{
+  width: 100%; transition: all 0.4s;
+}
+section.sectors .list li a h3{
+  position: absolute; left: 50%; top: 50%;
+  color: #fff; transform: translate(-50%, -50%);
+  font-size: 25px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;
+  letter-spacing: 1px; transition: all 0.5s;
+}
+/* motion animation */
+@keyframes sectors{
+  0%{
+    opacity: 0; transform: translateX(1000px);
+  }
+  30%{
+    opacity: 0; transform: translateX(1000px);
+  }
+}
+section.sectors .list.motion li{
+  animation-name: sectors; 
+  animation-duration: 1s;
+}
+section.sectors .list.motion li:nth-child(2){
+  animation-duration: 1.15s;
+}
+section.sectors .list.motion li:nth-child(3){
+  animation-duration: 1.3s;
+}
+
+
+/* section.service */
+section.service{
+  padding: 100px 0; 
+}
+section.service .inner{
+  overflow: hidden;
+}
+section.service .img{
+  width: 48%; float: left; border-radius: 10px;
+  overflow: hidden;
+}
+section.service .img img{
+  width: 100%;
+}
+section.service .text{
+  width: 45%; float: right;
+}
+/* motion animation */
+@keyframes service{
+  0%{
+    opacity: 0; transform: translateX(-1000px);
+  }
+  30%{
+    opacity: 0; transform: translateX(-1000px);
+  }
+}
+section.service .img.motion{
+  animation-name: service; 
+  animation-duration: 1s;
+}
+
+/* section.journal */
+section.journal{
+  padding: 350px 0 200px; 
+  font-family: 'Montserrat', sans-serif;
+  background: #f2f0eb;
+}
+section.journal h2{
+  font-size: 30px; letter-spacing: 1px; text-transform: uppercase;
+  text-align: center; margin-bottom: 100px;
+}
+section.journal .list{
+  display: flex; justify-content: space-between;
+}
+section.journal .list li{
+  width: 330px;
+}
+section.journal .list li a{
+  display: block;
+}
+section.journal .list li a .img{
+  height: 330px; position: relative;
+  border-radius: 10px; overflow: hidden;
+}
+section.journal .list li a .img img{
+  width: auto; height: 100%;
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+}
+section.journal .list li a h3{
+  font-size: 15px; letter-spacing: 1px; text-transform: uppercase; margin: 30px 0;
+}
+section.journal .list li a p{
+  font-size: 16px; line-height: 1.4; overflow: hidden;
+  display:-webkit-box; /* webkit-box만 적용하면 상자가 가로로정렬 */
+  -webkit-line-clamp:3; /* 생략부호가 적용되는 라인 수 */
+  -webkit-box-orient:vertical; /* 박스를 수직방향으로 배치 */
+  text-align: justify;
+}
+/* motion animation */
+@keyframes journal{
+  0%{
+    opacity: 0; transform: translateY(200px);
+  }
+  30%{
+    opacity: 0; transform: translateY(200px);
+  }
+}
+section.journal .list.motion li{
+  animation-name: journal;
+  animation-duration: 0.5s;
+}
+section.journal .list.motion li:nth-child(2){
+  animation-duration: 0.6s;
+}
+section.journal .list.motion li:nth-child(3){
+  animation-duration: 0.7s;
+}
+section.journal .list.motion li:nth-child(4){
+  animation-duration: 0.8s;
+}
+
+/* footer */
+footer{
+  width: 100%; height: 200px;
+  position: fixed; left: 0; bottom: 0;
+  padding: 75px 0; box-sizing: border-box;
+  background: #213135; color: #fff; z-index: -1; 
+}
+footer .inner{
+  display: flex; justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+}
+footer .inner .footerLogo{
+  font-size: 50px; 
+  text-transform: uppercase; font-weight: bold;
+}
+footer .inner .contact{
+  width: 30%; line-height: 1.4; margin-top: 10px;
+}
+footer .inner .sns{
+  display: flex;
+  margin-top: 20px;
+}
+footer .inner .sns li{
+  margin: 0 40px; font-weight: bold;
+  font-size: 17px;
+}
+
+/* text animation */
+@keyframes textAni{
+  0%{
+    opacity: 0;
+  }
+  30%{
+    opacity: 0;
+  }
+}
+.visual .title.motion .char{
+  animation: textAni 2s  both;
+  animation-delay: calc(0.08s * var(--char-index));
+}
+/* 공통 text animation */
+.text.motion .word{
+  animation: textAni 0.8s  both;
+  animation-delay: calc(0.02s * var(--word-index));
+}
+@keyframes border{
+  0%{
+    border-color: transparent;
+  }
+  60%{
+    border-color: transparent;
+  }
+}
+.text.motion a{
+  animation: border 1s both;
+}
+
+/* 반응형 */
+/*1400px*/
+@media screen and (max-width:1400px){
+  .inner {width: 90%;}
+  section.sectors .list {width: 90%;}
+  section.journal .list li {width: 220px;}
+  section.journal .list li a .img {height: 220px;}
+}
+
+/*1024px*/
+@media screen and (max-width:1024px){
+  .contents .visual .title {font-size: 50px;}
+  section.about .inner .text p,.text p {font-size: 28px;}
+  section.approach .inner .list {width: 100%; display: flex;flex-wrap: wrap; justify-content: space-between;}
+  section.approach .inner .list li {width: 48.5%;margin-bottom: 20px;}
+  section.approach .inner .list li:last-child {margin-bottom: 20px;}
+  section.approach .inner .fix {position: static; width: 100%; margin-bottom: 50px;}
+  section.approach .inner .fix .text {position: static;}
+  section.approach .inner .fix .text.on {position: static; transform: none;}
+  section.approach .inner {display: flex;flex-wrap: wrap;flex-direction: column-reverse;}
+  section.approach .inner .list li a.on::after, section.approach .inner .list li a:hover::after {display: none;}
+  section.approach .inner .list li a.on span, section.approach .inner .list li a:hover span,section.approach .inner .list li a span {position: absolute; display: block; z-index: 1; width: 100%;left: 0;top: 50%;transform: translateY(-50%); text-align: center; color:#fff;font-size: 25px; font-style: italic;}
+  section.approach .inner .list li a.on span b,section.approach .inner .list li a:hover span b,section.approach .inner .list li a span b {font-family: 'Montserrat', sans-serif; font-style: normal;}
+  section.sectors {padding: 100px 0 20%;margin-bottom: 15%;}
+  section.sectors .list {bottom: -18%;}
+  section.journal{padding: 25% 0 100px}
+  footer .inner {flex-wrap: wrap;}
+  footer .inner .footerLogo{width: 100%;}
+  .contents{margin-bottom: 330px;}
+  footer {height: 330px;}
+  footer .inner .contact {width: 100%; margin: 20px 0;}
+  footer .inner .sns {width: 100%; justify-content: space-between;}
+  footer .inner .sns li {margin: 0;}
+    }
+
+  /*768px*/
+  @media screen and (max-width:768px){
+    section.service .inner{display: flex; flex-wrap: wrap; flex-direction: column-reverse;}
+    section.service .img {width: 100%;}
+    section.service .text {width: 100%;margin-bottom: 50px;}
+    section.journal { padding: 30% 0 100px;}
+    section.journal .list {flex-wrap: wrap;}
+    section.journal .list li {width: 48.5%; margin-bottom: 20px;}
+    section.journal .list li a .img {height: auto;}
+    section.journal .list li a .img img {width: 100%;height: auto;position: static; transform: none;}
+  }
+  
+  /*500*/
+  @media screen and (max-width:500px){
+      
+    header {padding: 20px 0 18px;}
+    header .inner .gnbBtn, header.on .inner .gnbBtn {width: 22px; margin-top: 5px;}
+    header .inner .logo, header.on .inner .logo  {font-size: 18px;}
+    header .inner .contact {display: none;}
+    nav.gnb.on, header.on nav.gnb {width: 100%; padding: 0;} 
+    nav.gnb ul, header.on nav.gnb ul {width: 50%;}  
+    .contents .visual .title {font-size: 32px;}
+    section.about .inner .text p, .text p {font-size: 22px;}
+    section.about,section.approach {padding: 80px 0;}
+    section.approach .inner .list li {width: 100%;}
+    section.sectors {padding: 80px 0 85%; margin-bottom: 120%;}
+    section.sectors .list {flex-wrap: wrap; bottom: -82%;}
+    section.sectors .list li {width: 100%; margin-bottom: 15px;}
+    section.journal {padding: 60% 0 80px;}
+    section.journal h2 {font-size: 25px;}
+    section.journal .list li {width: 100%;}
+    section.journal .list li:nth-child(2)~ * {display: none;}
+    footer {height: 280px; padding: 50px 0;}
+    footer .inner .footerLogo {font-size: 35px; text-align: center;}
+    footer .inner .sns li {font-size: 13px;}
+    .contents {margin-bottom: 280px;}
+  }
+
+  /* 반응형 */
+
+/* 1400px */
+@media screen and (max-width:1400px){
+	.inner {width: 90%}
+	section.sectors .list {width: 90%}
+	section.journal .list li {width: 220px;}
+	section.journal .list li a .img {height: 220px}
+}
+
+/* 1024px */
+@media screen and (max-width:1024px){
+	section.visual .title {font-size: 50px}
+	section.about .text p , .text p {font-size: 28px} /* 어바웃 영역만 글씨 조금 더크게 해놨었는데 맞춰줌 */
+	section.approach .inner .list {width: 100%; display: flex; flex-wrap: wrap; justify-content:space-between;}
+	section.approach .inner .list li {width: 48.5%; margin-bottom: 20px}
+	section.approach .inner .list li:last-child {margin-bottom: 20px}
+	/* fix 부분 포지션 해제 해제 */
+	section.approach .inner .fix {position: static; width: 100%; margin-bottom: 50px}
+	section.approach .inner .fix .text {position: static;}
+	section.approach .inner .fix .text.on {position: static; transform: none;}
+	/*
+	플렉스 속성을 이용해 글씨가 위에 먼저 나오도록 변경
+	참고 URL : https://poiemaweb.com/css3-flexbox
+	*/
+	section.approach .inner {display: flex; flex-wrap: wrap;flex-direction: column-reverse;}
+	/* list 이미지 위에 검정BG는 없애줌 */
+	section.approach .inner .list li a.on:after ,section.approach .inner .list li a:hover:after {display: none}
+	/* 위에 81~82번줄 그대로 가져와서 뒤에 ,.list li a span 일때 추가 해주고 글자 사이즈 줄여줌 -> 항상 글씨가 나오도록 */
+	section.approach .inner .list li a.on span ,section.approach .inner .list li a:hover span, section.approach .inner .list li a span {position: absolute; display: block; z-index: 1;width: 100%; left: 0; top: 50%; transform: translateY(-50%);text-align: center; color: #fff; font-size: 25px; font-style: italic;}
+	section.approach .inner .list li a.on span b ,section.approach .inner .list li a:hover span b,section.approach .inner .list li a span b {font-family: 'Montserrat', sans-serif; font-style: normal;}
+	section.sectors { padding: 100px 0 20%; margin-bottom: 15%}
+	section.sectors .list {bottom: -18%}
+	section.journal {padding: 25% 0 100px;}
+	footer .inner {flex-wrap: wrap;}
+	.contents {margin-bottom: 330px} /* 푸터높이 */
+	footer {height: 330px;}
+	footer .inner .footerLogo {width: 100%}
+	footer .inner .contact {width: 100%;margin: 20px 0}
+	footer .inner .sns {width: 100%; justify-content: space-between;}
+	footer .inner .sns li {margin: 0}
+}
+
+/* 768px */
+@media screen and (max-width:768px){
+	section.service .inner {display: flex; flex-wrap: wrap;flex-direction: column-reverse;}
+	section.service .img {width: 100%}
+	section.service .text {width: 100%; margin-bottom: 50px;}
+	section.journal {padding: 30% 0 100px;}
+	section.journal .list {flex-wrap: wrap;}
+	section.journal .list li {width: 48.5%; margin-bottom: 20px}
+	section.journal .list li a .img {height: auto;}
+	section.journal .list li a .img img {width: 100%; height: auto; position: static; transform: none;}
+}
+
+/* 500px */
+@media screen and (max-width:500px){
+	header {padding: 20px 0 18px;}
+	header .gnbBtn, header.on .gnbBtn {width: 22px; margin-top: 5px}
+	header .logo, header.on .logo {font-size: 18px}
+	header .contact {display: none}
+	nav.gnb.on, header.on nav.gnb  {width: 100%; padding: 0}
+	nav.gnb ul, header.on nav.gnb ul {width: 50%}
+	section.visual .title {font-size: 32px}
+	section.about .text p , .text p {font-size: 22px}
+	section.about,section.approach {padding: 80px 0}
+	section.approach .inner .list li {width: 100%}
+	section.sectors {padding: 80px 0 85%; margin-bottom: 120%}
+	section.sectors .list {flex-wrap: wrap;bottom: -82%}
+	section.sectors .list li {width: 100%; margin-bottom: 15px}
+	section.journal {padding: 60% 0 80px}
+	section.journal h2 {font-size: 25px}
+	section.journal .list li {width: 100%}
+	section.journal .list li:nth-child(2)~ * {display: none;} /* 리스트 2개만 보여줌 콘텐츠가 너무 길어져서 */
+	.contents {margin-bottom: 280px}
+	footer {height: 280px; padding: 50px 0;}
+	footer .inner .footerLogo {text-align: center; font-size: 35px}
+	footer .inner .sns li {font-size: 13px}
+}
